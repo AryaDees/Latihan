@@ -7,5 +7,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-route::get('/dashboard', [DashboardController::class, 'index']);
-Route::post('/proseslogin', [AuthController::class,'proseslogin']);
+route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::post('/proseslogin', [AuthController::class, 'proseslogin']);

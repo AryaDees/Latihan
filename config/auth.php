@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'mahasiswa',
         ],
         'mahasiswa' => [
             'driver' => 'session',
@@ -46,7 +46,7 @@ return [
         ],
         'user' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'mahasiswa',
         ],
     ],
 
@@ -72,9 +72,9 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
-        'mahasiswas' => [
+        'mahasiswa' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\mahasiswa::class),
+            'model' => env('AUTH_MODEL', App\Models\Mahasiswa::class),
         ],
 
         // 'users' => [
