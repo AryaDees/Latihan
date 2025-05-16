@@ -10,10 +10,15 @@ class AuthController extends Controller
 {
     public function proseslogin(Request $request)
     {
-        if (Auth::guard('mahasiswa')->attempt(['npm' => $request->npm, 'password' => $request->password])) {
-            echo "Berhasil Login";   // ... kode di dalam if ...
-        } else {
-            echo "NPM atau Password Salah";
+        $credentials = [
+            'npm' => $request->npm,
+            'password' => $request->password
+        ];
+
+        if (Auth::attempt($credentials)) {
+            return redirect('dashboard');
         }
+
+        return back()->with('error', 'NPM atau Password Salah');
     }
 }
