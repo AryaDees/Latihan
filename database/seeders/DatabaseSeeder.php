@@ -16,12 +16,23 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
-
-        Mahasiswa::create([
+        User::create([
+            'name' => "Arya Dwi Santoso",
             'npm' => '51421246',
-            'nama_lengkap' => 'Rakhadinar Jaladara',
+            'image' => 'https://placehold.co/400',
+            'role' => 'mahasiswa',
             'kelas' => '4IA17',
             'no_hp' => '08515151515',
+            'password' => Hash::make('admin'),
+        ]);
+
+        User::create([
+            'name' => "Rakhadinar Jaladara",
+            'npm' => '51421245',
+            'image' => 'https://placehold.co/400',
+            'role' => 'dosen',
+            'kelas' => '4IA17',
+            'no_hp' => '08515151511',
             'password' => Hash::make('admin'),
         ]);
     }

@@ -8,8 +8,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.dashboard');
-    }    
+        $user = auth()->user();
+        return view('dashboard.dashboard', compact('user'));
+    }
 
-     
+
 }

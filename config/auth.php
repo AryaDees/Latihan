@@ -38,15 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'mahasiswa',
-        ],
-        'mahasiswa' => [
-            'driver' => 'session',
-            'provider' => 'mahasiswa',
-        ],
-        'user' => [
-            'driver' => 'session',
-            'provider' => 'mahasiswa',
+            'provider' => 'users',
         ],
     ],
 
