@@ -15,6 +15,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icon/192x192.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="manifest" href="__manifest.json">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="bg-white">
@@ -38,6 +40,15 @@
                 <h4>Isi Data Diri</h4>
             </div>
             <div class="section mt-1 mb-5">
+                @session('error')
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Opps...',
+                        text: '{{ session('error') }}',
+                    })
+                </script>
+                @endsession
                 <form action="/proseslogin" method="POST">
                     @csrf
                     <div class="form-group boxed">

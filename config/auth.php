@@ -38,15 +38,15 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'mahasiswa',
+            'provider' => 'users',
         ],
         'mahasiswa' => [
             'driver' => 'session',
-            'provider' => 'mahasiswa',
+            'provider' => 'mahasiswas',
         ],
         'user' => [
             'driver' => 'session',
-            'provider' => 'mahasiswa',
+            'provider' => 'mahasiswas',
         ],
     ],
 

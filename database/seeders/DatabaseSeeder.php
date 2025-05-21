@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        Mahasiswa::create([
-            'npm' => '51421246',
-            'nama_lengkap' => 'Rakhadinar Jaladara',
+         Mahasiswa::create([
+            'npm' => '50421220',
+            'nama_lengkap' => 'Arya Dwi Santoso',
             'kelas' => '4IA17',
-            'no_hp' => '08515151515',
+            'no_hp' => '081295575718',
             'password' => Hash::make('admin'),
         ]);
     }
