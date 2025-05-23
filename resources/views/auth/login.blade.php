@@ -4,9 +4,8 @@
     </x-slot>
     <!-- App Capsule -->
     <div id="appCapsule" class="pt-0">
-
         <div class="login-form mt-1">
-            <div class="section">
+            <div class="flex w-full justify-center">
                 <img src="{{ asset('assets/img/login/login1.png') }}" alt="image" class="form-image">
             </div>
             <div class="section mt-1">
@@ -44,8 +43,11 @@
                         </div>
                     </div>
 
-                    <div class="form-links mt-2">
-                        <div><a href="page-forgot-password.html" class="text-muted">Lupa Password?</a></div>
+                    <div class="flex w-full items-end justify-center mt-2">
+                        <div>
+                            <p class="mb-2">Lupa password?</p>
+                            <p class="mt-2">Hubungi Dosen</p>
+                        </div>
                     </div>
 
                     <div class="form-button-group">

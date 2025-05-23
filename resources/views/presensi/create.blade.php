@@ -54,4 +54,6 @@
             </div>
         </a>
     </div>
+
+    <x-layouts.footer />
 </x-layouts.app>

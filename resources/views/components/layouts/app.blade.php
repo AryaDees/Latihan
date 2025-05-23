@@ -30,8 +30,6 @@
 
     {{ $slot }}
 
-    <x-layouts.footer />
-
     <x-layouts.scripts />
 
 </body>
