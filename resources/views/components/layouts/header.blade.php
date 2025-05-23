@@ -4,6 +4,6 @@
             <ion-icon name="chevron-back-outline"></ion-icon>
         </a>
     </div>
-    <div class="pageTitle">Blank Page</div>
+    <div class="pageTitle">Presensi</div>
     <div class="right"></div>
 </div>

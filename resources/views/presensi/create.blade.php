@@ -7,13 +7,32 @@
 
     <!-- App Capsule -->
     <div id="appCapsule">
-        <div class="section full mt-2">
-            <div class="section-title">Title</div>
-            <div class="wide-block pt-2 pb-2">
-                Great to start your projects from here.
-            </div>
+        <div class="row" style="margin-top: 70px;">
+            <div class="col">
+                <div class= "webcam-capture"></div>
+
+                </div>
+              
+            
         </div>
     </div>
+    @push('myscripts')
+    <script> 
+        Webcam.set({
+            width: 320,
+            height: 240,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+        Webcam.attach('.webcam-capture');
+
+        function take_snapshot() {
+            Webcam.snap(function (data_uri) {
+                document.getElementById('my_camera').innerHTML = '<img src="' + data_uri + '"/>';
+            });
+        } 
+
+    </script>
     <!-- * App Capsule -->
 
     <!-- App Bottom Menu -->
