@@ -18,6 +18,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="manifest" href="__manifest.json">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body style="background-color:#e9ecef;">
@@ -28,14 +29,12 @@
     </div>
     <!-- * loader -->
 
-
-
     <!-- App Capsule -->
     <div id="appCapsule">
         @yield('content')
     </div>
     <!-- * App Capsule -->
-     @include('layout.bottomNav')
+    @include('layout.bottomNav')
     @include('layout.script')
 
 </body>
