@@ -18,18 +18,18 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         User::create([
             'name' => "Arya Dwi Santoso",
-            'npm' => '51421246',
-            'image' => 'https://placehold.co/400',
+            'npm' => '50421220',
+            'image' => 'assets/img/dashboard/dashboard1.png',
             'role' => 'mahasiswa',
             'kelas' => '4IA17',
-            'no_hp' => '08515151515',
+            'no_hp' => '081295575718',
             'password' => Hash::make('admin'),
         ]);
 
         User::create([
             'name' => "Rakhadinar Jaladara",
             'npm' => '51421245',
-            'image' => 'https://placehold.co/400',
+            'image' => 'assets/img/dashboard/dashboard2.jpg',
             'role' => 'dosen',
             'kelas' => '4IA17',
             'no_hp' => '08515151511',

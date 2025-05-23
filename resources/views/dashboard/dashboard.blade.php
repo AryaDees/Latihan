@@ -4,7 +4,7 @@
         <div id="user-detail" class="d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 <div class="avatar">
-                    <img src="{{ asset('assets/img/dashboard/dashboard1.png') }}" alt="avatar" class="imaged w64 rounded">
+                    <img src="{{ auth()->user()->image }}" alt="avatar" class="imaged w64 rounded">
                 </div>
                 <div id="user-info" class="ms-3">
                     @auth

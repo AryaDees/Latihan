@@ -17,9 +17,9 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            return redirect('dashboard');
         }
-
-        return redirect('dashboard');
+        return back()->with('error', 'NPM atau Password Salah');
     }
 
     public function logout(Request $request)

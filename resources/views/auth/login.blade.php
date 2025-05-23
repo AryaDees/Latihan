@@ -39,6 +39,15 @@
                 <h1>Selamat Datang</h1>
                 <h4>Isi Data Diri</h4>
             </div>
+            @session('error')
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Opps...',
+                        text: '{{ session('error') }}',
+                    })
+                </script>
+                @endsession
             <div class="section mt-1 mb-5">
                 <form action={{ route('proseslogin') }} method="POST">
                     @csrf
