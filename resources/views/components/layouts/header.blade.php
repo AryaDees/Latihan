@@ -1,4 +1,3 @@
-<!-- App Header -->
 <div class="appHeader bg-primary text-light">
     <div class="left">
         <a href="javascript:;" class="headerButton goBack">
@@ -8,4 +7,3 @@
     <div class="pageTitle">Blank Page</div>
     <div class="right"></div>
 </div>
-<!-- * App Header -->

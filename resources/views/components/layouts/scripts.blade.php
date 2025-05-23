@@ -1,4 +1,4 @@
-<!-- ///////////// Js Files ////////////////////  -->
+<div>
     <!-- Jquery -->
     <script src="{{ asset('assets/js/lib/jquery-3.4.1.min.js') }}"></script>
     <!-- Bootstrap-->
@@ -18,7 +18,7 @@
     <script src="{{ asset('assets/js/base.js') }}"></script>
 
     <script>
-        am4core.ready(function () {
+        am4core.ready(function() {
 
             // Themes begin
             am4core.useTheme(am4themes_animated);
@@ -29,8 +29,7 @@
 
             chart.legend = new am4charts.Legend();
 
-            chart.data = [
-                {
+            chart.data = [{
                     country: "Hadir",
                     litres: 501.9
                 },
@@ -65,3 +64,4 @@
             ];
         }); // end am4core.ready()
     </script>
+</div>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Halaman Dashboard</title>
+    <title>{{ $title }}</title>
     <meta name="description" content="Mobilekit HTML Mobile UI Kit">
     <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
     <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" sizes="32x32">
@@ -21,21 +21,18 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body style="background-color:#e9ecef;">
+<body>
 
     <!-- loader -->
     <div id="loader">
         <div class="spinner-border text-primary" role="status"></div>
     </div>
-    <!-- * loader -->
 
-    <!-- App Capsule -->
-    <div id="appCapsule">
-        @yield('content')
-    </div>
-    <!-- * App Capsule -->
-    @include('layout.bottomNav')
-    @include('layout.script')
+    {{ $slot }}
+
+    <x-layouts.footer />
+
+    <x-layouts.scripts />
 
 </body>
 
