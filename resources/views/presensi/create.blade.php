@@ -6,21 +6,6 @@
     <x-layouts.header />
 
     <style>
-        .webcam-capture {
-            padding: 24px;
-            /* background: #fff; */
-            border-radius: 15px;
-            /* box-shadow: 0 2px 16px rgb(239, 238, 238); */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 352px;
-            /* Lebar maksimal agar tidak melewati batas layar */
-            margin: 32px auto 0 auto;
-            box-sizing: border-box;
-        }
-
         .webcam-capture video,
         #my_camera video {
             display: block;
@@ -33,14 +18,9 @@
             box-sizing: border-box;
         }
 
-        #appCapsule {
-            padding-bottom: 90px;
-            padding-left: 90px;
-        }
-
         #map {
             width: 100%;
-            max-width: 352px;
+            /* max-width: 352px; */
             height: 300px;
             margin-top: 16px;
             border-radius: 12px;
@@ -54,12 +34,12 @@
     </style>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <div class="w-full bg-red-500 py-10">
-        <div class="row webcam-row-padding">
-            <div class="col d-flex justify-content-center align-items-center flex-column">
+    <div class="w-full">
+        <div class="webcam-row-padding w-full flex flex-col pt-20 pb-28">
+            <div class="col d-flex justify-content-center align-items-center flex-column bgoran">
                 <input type="hidden" id="lokasi" class="mb-3" readonly style="max-width:320px;">
-                <div class="webcam-capture">
-                    <div id="my_camera" style="width:100%; max-width:352px;"></div>
+                <div>
+                    <div id="my_camera"></div>
                 </div>
                 <div class="row">
                     <div class="col text-center">
@@ -69,18 +49,17 @@
                         </button>
                     </div>
                 </div>
-                <div id="map"></div>
+                <div id="map" class="w-full bg-blue-400 max-w-[352px]"></div>
             </div>
         </div>
 
 
+        <input type="text" id="lokasi" class="" readonly>
     </div>
 
 
-    <input type="text" id="lokasi" class="mb-3" readonly
-        style="max-width:320px; display:block; margin:16px auto;">
 
-    <div id="appCapsule">
+    <div id="appCapsule" class="">
         <!-- Konten lain di bawah kamera -->
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
