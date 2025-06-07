@@ -35,9 +35,7 @@ class PresensiController extends Controller
         ];
         $simpan = DB::table('presensi')->insert($data);
         if ($simpan) {
-
-
-             Storage::put($file, $image_base64);
+            Storage::put($file, $image_base64);
         } else {
             return redirect()->back()->with('error', 'Gagal menyimpan data presensi');
         }
