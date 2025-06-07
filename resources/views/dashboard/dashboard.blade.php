@@ -11,10 +11,10 @@
                             <div class="avatar">
                                 <img src="{{ auth()->user()->image }}" alt="avatar" class="imaged w64 rounded">
                             </div>
-                            <div id="user-info" class="ms-3">
+                            <div id="user-info" class="">
                                 @auth
                                     <h2 id="user-name">{{ auth()->user()->name }}</h2>
-                                    <span id="user-role">{{ auth()->user()->role }}</span>
+                                    <span id="user-role" class="mb-5">{{ auth()->user()->role }}</span>
                                 @endauth
                             </div>
                         </div>

@@ -17,4 +17,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //presensi
 route::get('/presensi/create',[PresensiController::class, 'create']);
+route::post ('/presensi/store',[PresensiController::class, 'store'])->name('presensi.store');
 });

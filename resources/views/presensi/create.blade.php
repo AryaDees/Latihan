@@ -95,7 +95,43 @@
             console.log(error);
         }
         $('#absen').click(function(e){
-            alert('Absen Masuk Berhasil');
+            Webcam.snap(function (uri) {
+                image= uri;
+            });
+            var lokasi = $("#lokasi").val();
+            $.ajax({
+                type: 'POST',
+                url: '/presensi/store',
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    image: image,
+                    lokasi: lokasi
+                },
+                cache: false,
+                success: function(respond) {
+                    console.log(respond);
+                    if (respond == 0) {
+                        Swal.fire({
+                            title: 'Berhasil',
+                            text: respond.message,
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = '/presensi';
+                            }
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'Gagal',
+                            text: respond.message,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+
+                }
+            });
         });
     </script>   
     <x-layouts.footer />
