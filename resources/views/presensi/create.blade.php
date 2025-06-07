@@ -107,7 +107,6 @@
             Webcam.snap(function(uri) {
                 image = uri;
             });
-            e.preventDefault();
 
             var lokasi = $("#lokasi").val();
             $.ajax({
@@ -119,12 +118,11 @@
                     lokasi: lokasi
                 },
                 cache: false,
-                success: function(respond) {
-                    console.log(respond);
-                    if (respond == 0) {
+                success: function(response) {
+                    if (response) {
                         Swal.fire({
                             title: 'Berhasil Absen',
-                            text: respond.message,
+                            text: response.message,
                             icon: 'success',
                             confirmButtonText: 'OK'
                         }).then((result) => {
@@ -135,7 +133,7 @@
                     } else {
                         Swal.fire({
                             title: 'Gagal Absen',
-                            text: respond.message,
+                            text: response.message,
                             icon: 'error',
                             confirmButtonText: 'OK'
                         });
