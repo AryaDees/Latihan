@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => "Rakhadinar Jaladara",
-            'npm' => '51421245',
+            'npm' => '51421246',
             'image' => 'assets/img/dashboard/dashboard2.jpg',
             'role' => 'dosen',
             'kelas' => '4IA17',

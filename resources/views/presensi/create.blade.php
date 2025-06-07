@@ -15,7 +15,7 @@
             border: 4px solid #007bff;
             /* box-shadow: 0 2px 16px rgb(242, 242, 242); */
             /* background: #fff; */
-            box-sizing: border-box; 
+            box-sizing: border-box;
         }
 
         #map {
@@ -24,8 +24,10 @@
             height: 300px;
             margin-top: 16px;
             border-radius: 12px;
-            border: 4px solid #007bff; /* Border biru */
-            box-shadow: 0 2px 16px rgb(239, 238, 238); /* Bayangan */
+            border: 4px solid #007bff;
+            /* Border biru */
+            box-shadow: 0 2px 16px rgb(239, 238, 238);
+            /* Bayangan */
             background: #fff;
             box-sizing: border-box;
         }
@@ -73,31 +75,40 @@
 
         var lokasi = document.getElementById('lokasi');
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(succesCallback, errorCallback, { enableHighAccuracy: true });
+            navigator.geolocation.getCurrentPosition(succesCallback, errorCallback, {
+                enableHighAccuracy: true
+            });
         }
+
         function succesCallback(position) {
             lokasi.value = position.coords.latitude + ',' + position.coords.longitude;
             var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 20);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
             var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-            var circle = L.circle([position.coords.latitude, position.coords.longitude], { /* nanti taro titik kordinat kampus yaaa */
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 100
-}).addTo(map);
+            var circle = L.circle([position.coords.latitude, position.coords.longitude], {
+                /* nanti taro titik kordinat kampus yaaa */
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 100
+            }).addTo(map);
 
         }
+
         function errorCallback(error) {
             console.log(error);
         }
-        $('#absen').click(function(e){
-            Webcam.snap(function (uri) {
-                image= uri;
+
+        $('#absen').click(function(e) {
+
+            Webcam.snap(function(uri) {
+                image = uri;
             });
+            e.preventDefault();
+
             var lokasi = $("#lokasi").val();
             $.ajax({
                 type: 'POST',
@@ -113,7 +124,7 @@
                     if (respond == 0) {
                         Swal.fire({
                             title: 'Berhasil Absen',
-                            text: respond.message, 
+                            text: respond.message,
                             icon: 'success',
                             confirmButtonText: 'OK'
                         }).then((result) => {
@@ -133,6 +144,6 @@
                 }
             });
         });
-    </script>   
+    </script>
     <x-layouts.footer />
 </x-layouts.app>
