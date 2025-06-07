@@ -112,18 +112,18 @@
                     console.log(respond);
                     if (respond == 0) {
                         Swal.fire({
-                            title: 'Berhasil',
-                            text: respond.message,
+                            title: 'Berhasil Absen',
+                            text: respond.message, 
                             icon: 'success',
                             confirmButtonText: 'OK'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.href = '/presensi';
+                                window.location.href = '/dashboard';
                             }
                         });
                     } else {
                         Swal.fire({
-                            title: 'Gagal',
+                            title: 'Gagal Absen',
                             text: respond.message,
                             icon: 'error',
                             confirmButtonText: 'OK'

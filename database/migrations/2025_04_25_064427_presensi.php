@@ -12,14 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('presensi', function (Blueprint $table) {
-            $table->string('id', 10)->primary();
+            $table->id();
             $table->string('npm', 10);
-            $table->date('tgl_absensi');
+            $table->date('tgl_presensi');
             $table->time('jam_in');
-            $table->time('jam_out');
             $table->text('foto_in',);
-            $table->text('foto_out',);
-            $table->text('location',);
+            $table->text('lokasi',);
 
            
         });

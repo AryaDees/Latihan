@@ -31,14 +31,15 @@ class PresensiController extends Controller
             'tgl_presensi' => $tgl_presensi,
             'jam_in' => $jam,
             'foto_in' => $fileName,
-            'lokasi_in' => $lokasi
+            'lokasi' => $lokasi
         ];
         $simpan = DB::table('presensi')->insert($data);
         if ($simpan) {
-            echo 0;
+
+
              Storage::put($file, $image_base64);
         } else {
-            echo 1;
+            return redirect()->back()->with('error', 'Gagal menyimpan data presensi');
         }
     }
 }

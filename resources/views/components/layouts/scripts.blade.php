@@ -1,4 +1,4 @@
-<div>
+
     <!-- Jquery -->
     <script src="{{ asset('assets/js/lib/jquery-3.4.1.min.js') }}"></script>
     <!-- Bootstrap-->
@@ -68,5 +68,3 @@
         }); // end am4core.ready()
     </script>
 
-    @stack('myscripts')
-</div>
