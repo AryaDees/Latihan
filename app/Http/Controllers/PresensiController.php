@@ -21,7 +21,7 @@ class PresensiController extends Controller
         $lokasi = $request->lokasi;
         $image = $request->image;
         $folderPath = "public/uploads/absensi/";
-        $formatName = $npm . "-" . $tgl_presensi;
+        $formatName = $npm . "-" . $tgl_presensi . $jam;
         $image_parts = explode(";base64,", $image);
         $image_base64 = base64_decode($image_parts[1]);
         $fileName = $formatName . ".png";
